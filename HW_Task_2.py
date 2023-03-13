@@ -7,6 +7,16 @@
 *** Рассмотрите случай числа с плавающей точкой и не обязательно 3-х значного
 '''
 
-n = 123
-result = (n // 100) + ((n // 10) % 10) + (n % 10)
-print(f'{n} -> {result} ({str(n)[0]}, {str(n)[1]}, {str(n)[2]})')
+number = int(input('Введите трехзначное число: '))
+while number // 1000 > 0 :   
+    if number//1000 > 0:
+        print('Число не трехзначное')
+        number = int(input('Введите трехзначное число: '))
+
+n = number
+sum = 0
+while n / 10 > 0:
+    sum = sum + n % 10
+    n //= 10
+
+print(f'{number} -> {sum} ({str(number)[0]}, {str(number)[1]}, {str(number)[2]})')
